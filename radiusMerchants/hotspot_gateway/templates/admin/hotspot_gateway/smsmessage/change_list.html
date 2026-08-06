@@ -1,0 +1,37 @@
+{% extends "admin/change_list.html" %}
+
+{% block object-tools %}
+    {{ block.super }}
+    {% if summary_stats %}
+        <div style="margin: 18px 0; display: flex; flex-wrap: wrap; gap: 16px;">
+            <div style="padding: 12px 16px; border: 1px solid #d2d6dc; background: #f8f9fa; min-width: 140px;">
+                <div style="font-size: 11px; text-transform: uppercase; color: #666;">Total Revenue</div>
+                <div style="font-size: 22px; font-weight: bold;">UGX {{ summary_stats.total_revenue|floatformat:2 }}</div>
+            </div>
+            <div style="padding: 12px 16px; border: 1px solid #d2d6dc; background: #f8f9fa; min-width: 140px;">
+                <div style="font-size: 11px; text-transform: uppercase; color: #666;">Daily</div>
+                <div style="font-size: 20px; font-weight: bold;">UGX {{ summary_stats.daily_revenue|floatformat:2 }}</div>
+            </div>
+            <div style="padding: 12px 16px; border: 1px solid #d2d6dc; background: #f8f9fa; min-width: 140px;">
+                <div style="font-size: 11px; text-transform: uppercase; color: #666;">Weekly</div>
+                <div style="font-size: 20px; font-weight: bold;">UGX {{ summary_stats.weekly_revenue|floatformat:2 }}</div>
+            </div>
+            <div style="padding: 12px 16px; border: 1px solid #d2d6dc; background: #f8f9fa; min-width: 140px;">
+                <div style="font-size: 11px; text-transform: uppercase; color: #666;">Monthly</div>
+                <div style="font-size: 20px; font-weight: bold;">UGX {{ summary_stats.monthly_revenue|floatformat:2 }}</div>
+            </div>
+            <div style="padding: 12px 16px; border: 1px solid #d2d6dc; background: #f8f9fa; min-width: 140px;">
+                <div style="font-size: 11px; text-transform: uppercase; color: #666;">Processed</div>
+                <div style="font-size: 20px; font-weight: bold;">{{ summary_stats.total_processed }}</div>
+            </div>
+            <div style="padding: 12px 16px; border: 1px solid #d2d6dc; background: #f8f9fa; min-width: 140px;">
+                <div style="font-size: 11px; text-transform: uppercase; color: #666;">Failed</div>
+                <div style="font-size: 20px; font-weight: bold;">{{ summary_stats.total_failed }}</div>
+            </div>
+            <div style="padding: 12px 16px; border: 1px solid #d2d6dc; background: #f8f9fa; min-width: 140px;">
+                <div style="font-size: 11px; text-transform: uppercase; color: #666;">Transactions</div>
+                <div style="font-size: 20px; font-weight: bold;">{{ summary_stats.total_transactions }}</div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
