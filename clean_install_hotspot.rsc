@@ -98,19 +98,8 @@ add name=rd_hsprof hotspot-address=10.20.20.1 dns-name="login.hotspot.local" htm
 /ip hotspot
 add name=hs_vlan20 interface=vlan20-hotspot address-pool=pool_vlan20 profile=rd_hsprof disabled=no comment="Hotspot Server on VLAN 20"
 
-/ip hotspot walled-garden
-add dst-host=10.10.10.100 action=accept comment="Allow RADIUSdesk IP before authentication"
-add dst-host=192.168.88.1 action=accept comment="Allow gateway before authentication"
-
 # ---------------------------------------------------------------------
-# 7. HOTSPOT WALLED-GARDEN (OPTIONAL - CAN BE ADDED MANUALLY)
-# ---------------------------------------------------------------------
-# /ip hotspot walled-garden
-# add dst-host=10.10.10.100 action=accept comment="Allow RADIUSdesk IP before authentication"
-# add dst-host=192.168.88.1 action=accept comment="Allow gateway before authentication"
-
-# ---------------------------------------------------------------------
-# 8. FIREWALL FILTER RULES & NETWORK ISOLATION
+# 7. FIREWALL FILTER RULES & NETWORK ISOLATION
 # ---------------------------------------------------------------------
 /ip firewall filter
 # --- INPUT CHAIN (Traffic to Router itself) ---
