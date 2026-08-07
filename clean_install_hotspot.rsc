@@ -144,6 +144,6 @@ add chain=forward action=drop comment="Drop Unauthorized Forwarding"
 # 8. SYSTEM SERVICES & AUTOMATED BACKUP SCHEDULE
 # ---------------------------------------------------------------------
 /system scheduler
-add name="ScheduleNightlyBackup" start-time=03:00:00 interval=1d on-event="/system backup save name=clean_auto_backup; /export file=clean_auto_export" comment="Daily Backup at 3 AM"
+add name="ScheduleNightlyBackup" start-time=03:00:00 interval=1d policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive comment="Daily Backup at 3 AM"
 
 :log info "Full blank-slate configuration successfully initialized!"
