@@ -93,7 +93,7 @@ add service=hotspot address=10.10.10.100 secret="9373" timeout=3000ms authentica
 set accept=yes port=3799
 
 /ip hotspot profile
-add name=rd_hsprof hotspot-address=10.20.20.1 dns-name="login.hotspot.local" html-directory=rd use-radius=yes login-by=http-pap comment="RADIUSdesk Hotspot Profile"
+add name=rd_hsprof hotspot-address=10.20.20.1 dns-name="login.hotspot.local" html-directory=hotspot use-radius=yes login-by=http-pap comment="RADIUSdesk Hotspot Profile"
 
 /ip hotspot
 add name=hs_vlan20 interface=vlan20-hotspot address-pool=pool_vlan20 profile=rd_hsprof disabled=no comment="Hotspot Server on VLAN 20"
