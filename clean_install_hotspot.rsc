@@ -100,7 +100,7 @@ add name=hs_vlan20 interface=vlan20-hotspot address-pool=pool_vlan20 profile=rd_
 
 /ip hotspot walled-garden
 add dst-host="10.10.10.100" action=accept comment="Allow RADIUSdesk IP before authentication"
-add dst-address=192.168.88.0/24 action=accept comment="Allow 192.168.88.x portal resources"
+add dst-host="192.168.88.0/24" action=accept comment="Allow 192.168.88.x portal resources"
 
 # ---------------------------------------------------------------------
 # 7. FIREWALL FILTER RULES & NETWORK ISOLATION
