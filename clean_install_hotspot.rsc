@@ -150,10 +150,7 @@ set www disabled=yes
 set api disabled=yes
 set api-ssl disabled=yes
 
-/system script
-add name="NightlyBackup" source="/system backup save name=(\"clean_auto_backup\"); /export file=(\"clean_auto_export\");"
-
 /system scheduler
-add name="ScheduleNightlyBackup" start-time=03:00:00 interval=1d script="NightlyBackup" comment="Daily Backup at 3 AM"
+add name="ScheduleNightlyBackup" start-time=03:00:00 interval=1d on-event="/system backup save name=clean_auto_backup; /export file=clean_auto_export" comment="Daily Backup at 3 AM"
 
 :log info "Full blank-slate configuration successfully initialized!"
