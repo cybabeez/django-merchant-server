@@ -143,13 +143,6 @@ add chain=forward action=drop comment="Drop Unauthorized Forwarding"
 # ---------------------------------------------------------------------
 # 8. SYSTEM SERVICES & AUTOMATED BACKUP SCHEDULE
 # ---------------------------------------------------------------------
-/system service
-set telnet disabled=yes
-set ftp disabled=yes
-set www disabled=yes
-set api disabled=yes
-set api-ssl disabled=yes
-
 /system scheduler
 add name="ScheduleNightlyBackup" start-time=03:00:00 interval=1d on-event="/system backup save name=clean_auto_backup; /export file=clean_auto_export" comment="Daily Backup at 3 AM"
 
